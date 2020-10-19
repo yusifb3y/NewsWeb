@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<title>News Admin Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">Admin</h3>
+       @*<a class="w3-bar-item w3-button" href="/NewCategory">NewCategory</a>*@
+        @*<a class="w3-bar-item w3-button " href="/NewNews">NewNews</a>*@
+        @*<a class="w3-bar-item w3-button " href="/home/Category">Categories</a>*@
+        <a class="w3-bar-item w3-button " href="/AllNews">All News</a>
+        <a class="w3-bar-item w3-button" href="/AllCategories">All Categories</a>
+        <a class="w3-bar-item w3-button " href="/Home">Home</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+  
+
+
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</body>
+</html>

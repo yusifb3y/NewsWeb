@@ -1,0 +1,50 @@
+﻿@model IEnumerable<News>
+
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<table class="table table-bordered table-striped table-dark">
+    <tr>
+        <th>Content</th>
+
+        <th>Update</th>
+        <th>Delete</th>
+        <th>IsActive</th>
+        <th>Save</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tbody>
+        <td>@item.HtmlContent</td>
+        
+
+        <td><a class="btn btn-warning" asp-route-id="@item.Id" asp-controller="Admin" asp-action="UpdateNewsModal">Update</a></td>
+        <td><a class="btn btn-danger" asp-route-id="@item.Id" asp-controller="Admin" asp-action="DeleteNews">Delete</a></td>
+
+        <form method="get">
+            <input type="hidden" name="id" value="@item.Id" />
+            @if (item.IsActive)
+            {
+        <td>
+
+            <input type="checkbox" name="bit" value="1" checked />
+            @item.IsActive
+        </td>
+            }
+            @if (!item.IsActive)
+            {
+        <td>
+            <input type="checkbox" name="bit" value="1" />
+            @item.IsActive
+        </td>
+            }
+            <td><button asp-controller="Admin" asp-action="TrigNewsIsActive">Save</button></td>
+        </form>
+        </tbody>
+    }
+</table>
+
+<a class="btn btn-lg btn-success" style="margin-top:20px;" href="/NewNews">Add News</a>

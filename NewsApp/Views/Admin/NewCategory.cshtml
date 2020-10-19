@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<br />
+
+<form method="post">
+    <h4>@TempData["error"]</h4>
+    <div class="form-group">
+        <label>Enter Name Of Category</label>
+        <input class="form-control" style="width:50%" type="text" name="name" placeholder="Name of Category" />
+    </div>
+    <div class="form-group">
+        <label>Enter Priority Of Category</label>
+        <input class="form-control" style="width:50%" type="text" name="priority" placeholder="Priority of Category" />
+    </div>
+        <button class="btn btn-info btn-lg " type="submit"  asp-controller="Admin" asp-action="CreateCategory">Create</button>
+</form>

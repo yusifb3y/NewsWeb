@@ -1,0 +1,6 @@
+﻿@model IEnumerable<News>;
+@foreach(var item in Model)
+{
+    <h5>@item.Title</h5>
+    <h5>@item.HtmlContent</h5>
+}

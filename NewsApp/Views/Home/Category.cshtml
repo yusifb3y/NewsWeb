@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Category>;
+
+<table>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+        @if (item.IsActive)
+        {
+            <td>
+                <a asp-route-id="@item.Id" asp-controller="Home" asp-action="NewsCategory">@item.Name</a>
+            </td>
+        }
+        </tr>
+    }
+
+
+</table>

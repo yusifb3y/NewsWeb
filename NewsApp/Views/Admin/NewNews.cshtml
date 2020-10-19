@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+<h1 class="text-center" >Add New News</h1>
+<form method="post" enctype="multipart/form-data">
+    <h4>@TempData["error"]</h4>
+    <input  style="width:50%" type="text" name="category" placeholder="kategorya" />
+    <br />
+    <input  style="width:50%" type="text" name="title" placeholder="title" />
+    <br />
+    <input  style="width:50%" type="text" name="subtitle" placeholder="subtitle" />
+    <br />
+    <input  style="width:50%" type="datetime" name="publishedDate" placeholder="publis date" />
+    <br />
+    <input type="file" name="file" />
+
+    <br />
+    <br />
+
+    <meta charset="utf-8">
+    <script src="../ckeditor.js"></script>
+    <textarea name="htmlContent" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor 4.
+       </textarea>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+    <button  class="btn btn-success btn-lg  " style="margin-top:20px;" type="submit" asp-controller="Admin" asp-action="CreateNews">Create</button>
+</form>

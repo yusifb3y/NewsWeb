@@ -1,0 +1,34 @@
+﻿@model IEnumerable<News>
+    <script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+@foreach (var item in Model)
+{
+<tbody>
+    @if (item.IsActive && item.PublishedDate<=DateTime.Now)
+    {
+    <tr>
+        <td><h5>@item.Category</h5></td>
+        <td> <h5>@item.Title</h5></td>
+        <td>  <h5>@item.Subtitle</h5></td>
+        <td>  <h5>@item.CreatedDate</h5></td>
+        <td>  <h5>@item.PublishedDate</h5></td>
+        <h5>@item.Photo.FileTarget</h5>
+        <img src="~/images/@item.Photo.FileName" height="50" width="50" />
+        <br />
+        @item.HtmlContent
+    </tr>
+    }
+  
+</tbody>
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>A Simple Page with CKEditor 4</title>
+    <!-- Make sure the path to CKEditor is correct. -->
+    <script src="../ckeditor.js"></script>
+</head>
+<body>
+    <a href="/home/Category">Categories</a>
+
+</body>
+</html>

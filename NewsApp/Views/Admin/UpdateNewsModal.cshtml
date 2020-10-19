@@ -1,0 +1,27 @@
+﻿@model News;
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+<script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+
+<form method="post">
+    <input type="hidden" asp-for="@Model.Id" />
+    <input type="text" asp-for="@Model.Category" />
+    <input type="text" asp-for="@Model.Title" />
+    <input type="text" asp-for="@Model.Subtitle" />
+    <input type="datetime" asp-for="@Model.PublishedDate" />
+
+    <meta charset="utf-8">
+    <script src="../ckeditor.js"></script>
+    <textarea asp-for="@Model.HtmlContent" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor 4.
+            </textarea>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+    <button type="submit" asp-controller="Admin" asp-action="UpdateNews">Save</button>
+</form>

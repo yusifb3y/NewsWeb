@@ -1,0 +1,8 @@
+﻿<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<form  method="post" class="form-control" >
+        <h4>@TempData["error"]</h4>
+    
+    <input class="input-group-text" type="text" name="email" placeholder="email" />
+    <input class="input-group-text" type="text" name="password" placeholder="password" />
+    <button class="btn btn-dark" type="submit" asp-controller="Login" asp-action="Login">Login</button>
+</form>
